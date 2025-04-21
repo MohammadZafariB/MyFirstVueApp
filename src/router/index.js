@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 // Import your pages (components)
 import Home from '@/components/LandingPage.vue'
-import Login from '@/components/LoginPage.vue'
+import Login from '@/components/LoginComponent.vue'
 
 const routes = [
   { path: '/', component: Home },
