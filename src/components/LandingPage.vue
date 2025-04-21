@@ -1,6 +1,7 @@
 <template>
 <div class="productsContainer"   >
     <Card v-for="(product,index) in Products" :key= "index" :product="product" class="cardComponent"/>
+    <button @click="toggleModal">toggle modal</button>
 </div>
 </template>
 
@@ -33,9 +34,8 @@
 </script>
 
 <style>
-.productsContainer{
-    display: flex;
-    width: 90%;
+.cardComponent{
+    width: 20%;
 }
 
 </style>

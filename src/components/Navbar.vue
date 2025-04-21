@@ -3,19 +3,28 @@
     <div class="rightSection">
       <!-- You can put logo or other stuff here -->
  
-      
+      <button class="button" @click="openModal">Exit account</button>
+
     </div>
     <div class="leftSection">
         <router-link to="/login">
-            <button class="loginButton" @click="console.log(d)">Login</button>
+            <button class="button" @click="console.log(d)">Login</button>
         </router-link>
 
     </div>
+  <Modal ref="modalRef" modalMessage="wanna leave?"/>
   </div>
 </template>
 
 <script setup>
-// No script yet
+import { ref } from "vue"
+import Modal from "./Modal.vue"
+const modalRef = ref(null)
+
+ function openModal(){
+  modalRef.value.toggleModal()
+ }
+
 </script>
 
 <style scoped>
@@ -27,7 +36,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
   top: 0;
   
   z-index: 999;
@@ -48,7 +56,7 @@
   cursor: pointer;
 }
 
-.loginButton {
+.button {
   background-color: #4CAF50;
   border: none;
   color: white;

@@ -21,10 +21,10 @@
     </el-form> -->
 <template>
   <el-form :model="form" label-width="auto" class="formContainer">
-    <el-form-item label="First name">
+    <el-form-item label="First name" class="firstNameInput">
       <el-input v-model="form.firstName" />
     </el-form-item>
-    <el-form-item label="Last name">
+    <el-form-item label="Last name" class="lastNameInput">
       <el-input v-model="form.lastName" />
     </el-form-item>
     <el-form-item label="Zone">
@@ -61,9 +61,8 @@ const form = reactive({
   firstName: '',
   lastName: '',
   region: '',
-  type: [],
   gender: '',
-  desc: '',
+  email: '',
 })
 
 const onSubmit = () => {
@@ -73,8 +72,9 @@ const onSubmit = () => {
 <style>
     .formContainer{
         margin-top: 5rem;
-        max-width: 900px 
-    }
+        max-width: 900px;
+
+    } 
     .buttonsContainer{
       margin-left: 50%;
     }

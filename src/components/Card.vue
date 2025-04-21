@@ -56,6 +56,7 @@ function toggleShowDetails(){
     align-items: center;
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .cardContainer:hover {
