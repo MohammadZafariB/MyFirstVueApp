@@ -1,0 +1,66 @@
+<template>
+  <div class="Navbar">
+    <div class="rightSection">
+      <!-- You can put logo or other stuff here -->
+ 
+      
+    </div>
+    <div class="leftSection">
+        <router-link to="/login">
+            <button class="loginButton" @click="console.log(d)">Login</button>
+        </router-link>
+
+    </div>
+  </div>
+</template>
+
+<script setup>
+// No script yet
+</script>
+
+<style scoped>
+.Navbar {
+  width: 100%;
+  height: 70px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  
+  z-index: 999;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  cursor: pointer;
+}
+
+.loginButton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 2rem;
+}
+
+.loginButton:hover {
+  background-color: #45a049;
+}
+</style>
