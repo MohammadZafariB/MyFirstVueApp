@@ -35,3 +35,11 @@ I'm always open to feedback, collaborations, or even just saying hi!
 
 If you found this interesting or helpful in any way, feel free to star the repo and follow along as I grow 👣✨
 
+## 🛣️ Learning Roadmap
+
+I'm currently learning **Element Plus** as I recently started working at a company that uses it extensively. I'm actively integrating it into this e-commerce project to practice what I learn in real-time.
+
+Check out my progress and ideas in the [Vue Learning Journey Board](https://github.com/your-username/your-repo/projects/1)!
+
+If you're experienced with Element Plus or Vue in general, I’d love your feedback — feel free to open an issue or drop a comment on one!
+
