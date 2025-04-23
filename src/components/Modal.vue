@@ -1,5 +1,5 @@
 <template>
-        <div class="backDrop" @click="toggleModal" v-if="showModal" >
+        <div class="backDrop" @click="toggleModal" v-if="showModal" :class="{dark : theme === 'dark' }" >
             <div class="modal">
                 <h1 class="message">{{props.modalMessage}}</h1>
                 <button @click="toggleModal">yes</button>
@@ -20,7 +20,8 @@ import { ref } from "vue"
         toggleModal
     })
     const props = defineProps({
-        modalMessage:String
+        modalMessage:String,
+        theme:String
     })
     </script>
 
@@ -39,5 +40,8 @@ import { ref } from "vue"
         margin: 100px auto;
         background: white;
         border-radius:10px;
+    }
+    .dark{
+        background: black;
     }
 </style>

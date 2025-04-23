@@ -3,11 +3,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // Import your pages (components)
-import Home from '@/components/LandingPage.vue'
-import Login from '@/components/LoginPage.vue'
+import LandingPage from '@/views/LandingPage.vue'
+import Login from '@/views/LoginPage.vue'
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/', component: LandingPage },
   { path: '/login', component: Login },
 ]
 

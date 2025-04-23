@@ -12,7 +12,7 @@
         </router-link>
 
     </div>
-  <Modal ref="modalRef" modalMessage="wanna leave?"/>
+  <Modal ref="modalRef" modalMessage="wanna leave?" theme="dark" />
   </div>
 </template>
 

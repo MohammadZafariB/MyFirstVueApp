@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-    import Card from "./Card.vue"
+    import Card from "../components/Card.vue"
       const Products=[
         {
         name:"TShirt", picturePath :"public/shirt.svg" , price: 99, id:1 , isfav:false
