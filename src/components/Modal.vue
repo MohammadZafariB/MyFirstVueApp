@@ -1,21 +1,30 @@
 <template>
-        <div class="backDrop" @click="toggleModal" v-if="showModal" :class="{dark : theme === 'dark' }" >
+        <div class="backDrop" @click.self="toggleModal" v-if="showModal" :class="{dark : !theme === 'dark' }" >
             <div class="modal">
                 <h1 class="message">{{props.modalMessage}}</h1>
-                <button @click="toggleModal">yes</button>
                 <button @click="toggleModal">no</button>
+                <button @click="goHome() ; toggleModal()" >yes</button>
             </div>
         </div>
 </template>
 
 <script setup>
 import { ref } from "vue"
+import {useRouter} from 'vue-router'
+
+const router = useRouter()
+
+    function goHome() {
+  router.push('/')
+  console.log("clicked!")
+}
 
     function toggleModal(){
         showModal.value=!showModal.value
     }
 
     const showModal = ref(false)
+
     defineExpose({
         toggleModal
     })

@@ -56,7 +56,8 @@ function toggleShowDetails(){
     align-items: center;
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+    width: 20%;
+    background-color: antiquewhite;
 }
 
 .cardContainer:hover {
@@ -127,4 +128,5 @@ function toggleShowDetails(){
 .heart{
     fill: none;
 }
+
 </style>

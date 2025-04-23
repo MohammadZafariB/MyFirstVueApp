@@ -2,29 +2,26 @@
   <div class="Navbar">
     <div class="rightSection">
       <!-- You can put logo or other stuff here -->
- 
-      <button class="button" @click="openModal">Exit account</button>
 
+      <button class="button" @click="openModal">Exit account</button>
     </div>
     <div class="leftSection">
-        <router-link to="/login">
-            <button class="button" @click="console.log(d)">Login</button>
-        </router-link>
-
+      <router-link to="/login">
+        <button class="button" @click="console.log(d)">Login</button>
+      </router-link>
     </div>
-  <Modal ref="modalRef" modalMessage="wanna leave?" theme="dark" />
+    <Modal ref="modalRef" modalMessage="wanna leave?" theme="" />
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue"
-import Modal from "./Modal.vue"
-const modalRef = ref(null)
+import { ref } from "vue";
+import Modal from "./Modal.vue";
+const modalRef = ref(null);
 
- function openModal(){
-  modalRef.value.toggleModal()
- }
-
+function openModal() {
+  modalRef.value.toggleModal();
+}
 </script>
 
 <style scoped>
@@ -37,7 +34,7 @@ const modalRef = ref(null)
   justify-content: space-between;
   align-items: center;
   top: 0;
-  
+
   z-index: 999;
 }
 
@@ -57,7 +54,7 @@ const modalRef = ref(null)
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 10px 20px;
