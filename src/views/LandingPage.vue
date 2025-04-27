@@ -1,5 +1,5 @@
 <template>
-    <SaleCountdown/>
+    <SaleCountdown hour=1 minute=0 second=2 />
 <div class="productsContainer"   >
     <Card v-for="(product,index) in Products" :key= "index" :product="product" />
 </div>

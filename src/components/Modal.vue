@@ -2,8 +2,8 @@
         <div class="backDrop" @click.self="toggleModal" v-if="showModal" :class="{dark : !theme === 'dark' }" >
             <div class="modal">
                 <h1 class="message">{{props.modalMessage}}</h1>
-                <button @click="toggleModal">no</button>
-                <button @click="goHome() ; toggleModal()" >yes</button>
+                <el-button type="success" @click="toggleModal">no</el-button>
+                <el-button type="danger" @click="goHome() ; toggleModal()" >yes</el-button>
             </div>
         </div>
 </template>
@@ -34,7 +34,7 @@ const router = useRouter()
     })
     </script>
 
-<style>
+<style scoped>
     .backDrop{
         top: 0;
         position: fixed;

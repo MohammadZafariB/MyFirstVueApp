@@ -5,8 +5,8 @@
  </div>
  <div class="detailsContainer">
     <div class="details" v-if="showDetails">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere deserunt eaque, aliquam necessitatibus modi natus quasi eos velit molestiae dolorem perferendis, similique, qui sunt asperiores architecto? Explicabo ad ratione eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum a ab repellendus molestiae, reprehenderit itaque exercitationem rem sint earum labore nam assumenda debitis recusandae temporibus aliquid laborum sunt. Possimus, est.</div>
-    <button class="showLess" v-show="showDetails" @click="toggleShowDetails">Show Less</button>
-    <button class="showMore" v-show="!showDetails" @click="toggleShowDetails">Show More </button>
+    <el-button class="showLess" v-show="showDetails" @click="toggleShowDetails">Show Less</el-button>
+    <el-button class="showMore" v-show="!showDetails" @click="toggleShowDetails">Show More </el-button>
  </div>
  <div class="bottomSection" >
     <AddToCart class="addToCartSection"/>
@@ -42,7 +42,7 @@ function toggleShowDetails(){
 
 </script>
 
-<style>
+<style scoped>
 .cardContainer {
 
     margin-bottom: 2rem;
@@ -105,6 +105,8 @@ function toggleShowDetails(){
 .bottomSection{
     display: flex;
     width: 16rem;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -119,7 +121,7 @@ function toggleShowDetails(){
 
 
 .addToCartSection{
-    flex: 10;
+    flex: 12;
 }
 .liked{
     fill: red;

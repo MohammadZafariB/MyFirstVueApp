@@ -69,7 +69,7 @@ const onSubmit = () => {
   console.log(form)
 }
 </script>
-<style>
+<style scoped>
     .formContainer{
         margin-top: 5rem;
         max-width: 900px;
