@@ -1,15 +1,26 @@
 <template>
 <div class="cardContainer">
  <div class="picture">
-    <img src="../../public/shirt.svg" alt="" class="pic">     
+    <img :src="product.picturePath" alt="" class="pic"> 
  </div>
  <div class="detailsContainer">
-    <div class="details" v-if="showDetails">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere deserunt eaque, aliquam necessitatibus modi natus quasi eos velit molestiae dolorem perferendis, similique, qui sunt asperiores architecto? Explicabo ad ratione eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum a ab repellendus molestiae, reprehenderit itaque exercitationem rem sint earum labore nam assumenda debitis recusandae temporibus aliquid laborum sunt. Possimus, est.</div>
+    <h1>{{product.name}}</h1>
+    <div class="details" v-if="showDetails">{{product.details}}</div>
     <el-button class="showLess" v-show="showDetails" @click="toggleShowDetails">Show Less</el-button>
     <el-button class="showMore" v-show="!showDetails" @click="toggleShowDetails">Show More </el-button>
  </div>
  <div class="bottomSection" >
-    <AddToCart class="addToCartSection"/>
+    <div class="addToCartSection">
+        <div class="addToCartContainer">
+
+  <h3>choose 
+      the amount : {{number}} </h3> 
+  <el-button @click="handleAddToCart" >add to cart</el-button>
+  <el-button type="success" @click="handleIncrease">increase +1</el-button>
+  <el-button type="success" @click="handleDecrese">decrese -1</el-button>
+  
+</div>
+        </div>
 
         <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" @click="toggleIsFav" :class="isFav? 'liked' : 'heart'"  >
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
@@ -23,15 +34,26 @@
 <script setup>
 
   import { ref } from "vue";
-import AddToCart from "./AddToCart.vue"
+
+
+
+  const number = ref(0)
+  function handleIncrease (){
+      number.value +=1
+  }
+  function handleDecrese (){
+      number.value -=1
+
+  }
+
 const { product } = defineProps({
-  product: Object
+    product: Object
 })
 const isFav = ref(product.isfav);
 
 
 const toggleIsFav = ()=>{
-        isFav.value=!isFav.value
+    isFav.value=!isFav.value
         product.isfav= isFav.value
     };
     
@@ -40,9 +62,20 @@ function toggleShowDetails(){
     showDetails.value=!showDetails.value
 }
 
+      const emit = defineEmits(['add-to-cart'])
+    
+    function handleAddToCart(){
+      emit('add-to-cart',product)
+    }
 </script>
 
 <style scoped>
+  .addToCartContainer{
+      max-width: 20rem;
+  }
+  .el-button{
+    width: 5rem;
+  }
 .cardContainer {
 
     margin-bottom: 2rem;
