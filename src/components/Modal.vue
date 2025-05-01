@@ -3,21 +3,26 @@
             <div class="modal">
                 <h1 class="message">{{props.modalMessage}}</h1>
                 <el-button type="success" @click="toggleModal">no</el-button>
-                <el-button type="danger" @click="goHome() ; toggleModal()" >yes</el-button>
+                <el-button type="danger" @click=";goHome() , toggleModal()" >yes</el-button>
             </div>
         </div>
 </template>
 
 <script setup>
+import { useAuthStore } from "@/stores/authstore"
 import { ref } from "vue"
 import {useRouter} from 'vue-router'
-
 const router = useRouter()
-
+const authStore = useAuthStore()
     function goHome() {
   router.push('/')
   console.log("clicked!")
+Logout()
 }
+
+    function Logout(){
+        authStore.logout()
+    }
 
     function toggleModal(){
         showModal.value=!showModal.value

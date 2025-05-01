@@ -22,6 +22,9 @@ export const useFavProductsStore = defineStore("favCart" ,
                 console.log("product was deleted from fav cart!")
                 this.favCart= this.favCart.filter(item => item.id !== product.id);
             }
+        },
+        persist:{
+            storage:localStorage
         }
 }
 )
